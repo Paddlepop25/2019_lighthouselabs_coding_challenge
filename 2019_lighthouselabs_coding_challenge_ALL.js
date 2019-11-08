@@ -80,3 +80,13 @@ const termTopics = interviews => {
 };
 
 // Day 8 Solution
+if (trash === "waste") {
+  bins.waste++;
+} else if (trash === "recycling") {
+  bins.recycling++;
+} else {
+  bins.compost++;
+}
+return bins;
+
+// Day 9 Solution
