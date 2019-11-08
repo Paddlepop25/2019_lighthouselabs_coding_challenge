@@ -50,7 +50,6 @@ const chooseStations = stations => {
 
 // Day 6 Solution
 const voterTurnout = function(voter_signatures, voter_ids) {
-  // Code here!
   if (voter_signatures.length !== voter_ids.length) {
     return false;
   } else {
