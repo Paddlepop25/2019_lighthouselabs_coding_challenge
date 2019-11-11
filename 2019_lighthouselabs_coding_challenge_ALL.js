@@ -97,3 +97,24 @@ const carPassing = (cars, speed) => {
 };
 
 // Day 10 Solution
+const whereCanIPark = (spots, vehicle) => {
+  for (let y = 0; y < spots.length; y++) {
+    for (let x = 0; x < spots[y].length; x++) {
+      const emptySpot = spots[y][x];
+      if (vehicle === "motorcycle") {
+        if (emptySpot === "M" || emptySpot === "S" || emptySpot === "R") {
+          return [x, y];
+        }
+      } else if (vehicle === "small") {
+        if (emptySpot === "S" || emptySpot === "R") {
+          return [x, y];
+        }
+      } else if (vehicle === "regular") {
+        if (emptySpot === "R") {
+          return [x, y];
+        }
+      }
+    }
+  }
+  return false;
+};
