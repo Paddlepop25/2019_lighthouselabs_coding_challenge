@@ -90,3 +90,10 @@ if (trash === "waste") {
 return bins;
 
 // Day 9 Solution
+const carPassing = (cars, speed) => {
+  let arr = cars;
+  arr.push({ time: Date.now(), speed: speed });
+  return arr;
+};
+
+// Day 10 Solution
