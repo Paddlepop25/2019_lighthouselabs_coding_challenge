@@ -118,3 +118,13 @@ const whereCanIPark = (spots, vehicle) => {
   }
   return false;
 };
+
+// Day 11 Solution
+const busTimes = buses => {
+  let objectAnswer = {};
+  for (let i in buses) {
+    time = buses[i].distance / buses[i].speed;
+    objectAnswer[i] = time;
+  }
+  return objectAnswer;
+};
