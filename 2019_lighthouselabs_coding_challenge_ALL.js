@@ -128,3 +128,10 @@ const busTimes = buses => {
   }
   return objectAnswer;
 };
+
+// Day 12 Solution
+const checkAir = function(samples, threshold) {
+  let totalLength = samples.length;
+  let noOfDirty = samples.filter(noOfDirty => noOfDirty === "dirty").length;
+  return noOfDirty / totalLength < threshold ? "Clean" : "Polluted";
+};
