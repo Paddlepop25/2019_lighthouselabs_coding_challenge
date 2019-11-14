@@ -135,3 +135,29 @@ const checkAir = function(samples, threshold) {
   let noOfDirty = samples.filter(noOfDirty => noOfDirty === "dirty").length;
   return noOfDirty / totalLength < threshold ? "Clean" : "Polluted";
 };
+
+// Day 13 Solution
+const lightsOn = function(lights) {
+  for (let i in lights) {
+    lights[i].on = true;
+  }
+  return lights;
+};
+
+const lightsOff = function(lights) {
+  for (let i in lights) {
+    lights[i].on = false;
+  }
+  return lights;
+};
+
+const toggleLights = function(lights, lightsAreOn) {
+  for (let i in lights) {
+    if (lightsAreOn === true) {
+      lightsOff(lights);
+    } else lightsOn(lights);
+  }
+  return lights;
+};
+
+// Day 14 Solution
