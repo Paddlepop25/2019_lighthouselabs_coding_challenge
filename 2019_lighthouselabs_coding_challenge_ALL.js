@@ -161,3 +161,14 @@ const toggleLights = function(lights, lightsAreOn) {
 };
 
 // Day 14 Solution
+const dynamicPricing = (numberOfPeople, distanceTraveled) => {
+  totalCost = 1;
+  costByDistance = distanceTraveled * 0.25;
+  totalCost += costByDistance;
+  if (numberOfPeople >= 30) {
+    totalCost += 0.25;
+  }
+  return `$${totalCost.toFixed(2)}`;
+};
+
+// Day 15 Solution
