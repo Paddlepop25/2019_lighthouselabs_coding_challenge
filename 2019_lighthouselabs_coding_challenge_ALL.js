@@ -172,3 +172,19 @@ const dynamicPricing = (numberOfPeople, distanceTraveled) => {
 };
 
 // Day 15 Solution
+const finalPosition = moves => {
+  let x = 0;
+  let y = 0;
+  moves.map(direction =>
+    direction === "north"
+      ? (y += 1)
+      : direction === "south"
+      ? (y -= 1)
+      : direction === "east"
+      ? (x += 1)
+      : direction === "west"
+      ? (x -= 1)
+      : null
+  );
+  return [x, y];
+};
