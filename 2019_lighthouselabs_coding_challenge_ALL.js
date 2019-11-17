@@ -188,3 +188,12 @@ const finalPosition = moves => {
   );
   return [x, y];
 };
+
+// Day 16 Solution
+
+const festivalColours = color1 => {
+  let complementaryColor1 = color1 + 150;
+  let complementaryColor2 = color1 + 210;
+
+  return [complementaryColor1, complementaryColor2];
+};
