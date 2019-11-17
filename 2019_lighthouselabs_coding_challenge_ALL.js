@@ -190,10 +190,23 @@ const finalPosition = moves => {
 };
 
 // Day 16 Solution
-
 const festivalColours = color1 => {
   let complementaryColor1 = color1 + 150;
   let complementaryColor2 = color1 + 210;
 
   return [complementaryColor1, complementaryColor2];
+};
+
+// Day 17 Solution
+const judgeVegetable = (vegetables, metric) => {
+  let highest = 0;
+  let index = 0;
+
+  for (let i = 0; i < vegetables.length; i++) {
+    if (vegetables[i][metric] > highest) {
+      highest = vegetables[i][metric];
+      index = i;
+    }
+  }
+  return vegetables[index].submitter;
 };
