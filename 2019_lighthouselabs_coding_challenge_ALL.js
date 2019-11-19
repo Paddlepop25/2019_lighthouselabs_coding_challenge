@@ -210,3 +210,42 @@ const judgeVegetable = (vegetables, metric) => {
   }
   return vegetables[index].submitter;
 };
+
+// Day 18 Solution
+const countTickets = tickets => {
+  let redColor = 0;
+  let greenColor = 0;
+  let blueColor = 0;
+
+  tickets.forEach(color =>
+    color === "red"
+      ? redColor++
+      : color === "green"
+      ? greenColor++
+      : blueColor++
+  );
+
+  return {
+    red: redColor,
+    green: greenColor,
+    blue: blueColor
+  };
+};
+
+const bestOdds = (tickets, raffleEntries) => {
+  let redPC = (countTickets(tickets).red / raffleEntries.red) * 100;
+  let greenPC = Math.floor(
+    (countTickets(tickets).green / raffleEntries.green) * 100
+  );
+  let bluePC = Math.floor(
+    (countTickets(tickets).blue / raffleEntries.blue) * 100
+  );
+
+  if (redPC > greenPC && redPC > bluePC) {
+    return `You have the best odds of winning the red raffle.`;
+  } else if (greenPC > redPC && greenPC > bluePC) {
+    return `You have the best odds of winning the green raffle.`;
+  } else if (bluePC > redPC && bluePC > greenPC) {
+    return `You have the best odds of winning the blue raffle.`;
+  }
+};
