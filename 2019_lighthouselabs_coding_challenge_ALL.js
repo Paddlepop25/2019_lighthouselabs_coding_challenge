@@ -249,3 +249,19 @@ const bestOdds = (tickets, raffleEntries) => {
     return `You have the best odds of winning the blue raffle.`;
   }
 };
+
+// Day 19 Solution
+const pumpkinSpice = money => {
+  let noOfPumpkinPie = Math.floor(money / 5);
+  let noOfPumpkinLatte = Math.floor((money - 5 * noOfPumpkinPie) / 3);
+  let noOfPumpkinMacarons = Math.floor(
+    (money - 5 * noOfPumpkinPie - 3 * noOfPumpkinLatte) / 1
+  );
+
+  let pumpkinSpice = 0;
+  pumpkinSpice += noOfPumpkinPie * 30;
+  pumpkinSpice += noOfPumpkinLatte * 15;
+  pumpkinSpice += noOfPumpkinMacarons * 3;
+
+  return [noOfPumpkinPie, noOfPumpkinLatte, noOfPumpkinMacarons, pumpkinSpice];
+};
