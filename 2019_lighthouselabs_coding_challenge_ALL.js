@@ -265,3 +265,28 @@ const pumpkinSpice = money => {
 
   return [noOfPumpkinPie, noOfPumpkinLatte, noOfPumpkinMacarons, pumpkinSpice];
 };
+
+// Day 20 Solution
+const PI = 3.14159;
+const sphereVolume = function(radius) {
+  return (4 / 3) * PI * Math.pow(radius, 3);
+};
+const coneVolume = function(radius, height) {
+  return (1 / 3) * PI * Math.pow(radius, 2) * height;
+};
+const prismVolume = function(height, width, depth) {
+  return height * width * depth;
+};
+const totalVolume = function(solids) {
+  let total = 0;
+  for (let shape of solids) {
+    if (shape.type === "sphere") {
+      total += sphereVolume(shape.radius);
+    } else if (shape.type === "cone") {
+      total += coneVolume(shape.radius, shape.height);
+    } else if (shape.type === "prism") {
+      total += prismVolume(shape.height, shape.width, shape.depth);
+    }
+  }
+  return total;
+};
