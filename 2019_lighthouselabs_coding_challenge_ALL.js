@@ -290,3 +290,20 @@ const totalVolume = function(solids) {
   }
   return total;
 };
+
+// Day 21 Solution
+const chooseRecipe = function(bakeryA, bakeryB, recipes) {
+  for (let i of recipes) {
+    if (
+      bakeryA.includes(i.ingredients[0]) &&
+      bakeryB.includes(i.ingredients[1])
+    ) {
+      return i.name;
+    } else if (
+      bakeryB.includes(i.ingredients[0]) &&
+      bakeryA.includes(i.ingredients[1])
+    ) {
+      return i.name;
+    }
+  }
+};
